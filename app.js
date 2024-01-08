@@ -4,10 +4,13 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
+require('dotenv').config()
+
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 
 var app = express();
+app.listen(process.env.PORT, () => console.log(`app listening on port: ${process.env.PORT}`))
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));

@@ -1,8 +1,124 @@
+:root {
+    --white: rgb(255, 255, 255);
+    --green: rgba(79, 150, 79, 0.998);
+    --poppins: Poppins;
+    --ch:115ch;
+    --blurwhite: rgb(229, 227, 227);
+}
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-} 
+    padding: 0;
+    margin: 0;
+    font-family: Poppins, sans-serif;
+}
+.logo {
+    max-width: 65px;
+}
+header {
+    width: 100%;
+    background-color: var(--white);
+    position: fixed;
+    box-shadow: 1px 0 1px 2px rgb(237, 237, 237);
+}
+nav {
+    font-size: 0.9rem;
+    /* border: 1px solid red; */
+    padding: 5px 15px;
+    padding-inline-end: 32px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+}
+.nav-ul {
+    display: flex;
+    list-style: none;
+    gap: 1rem;
+}
+header a {
+    color: black;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1rem;
+}
+.menu {
+    width: 28px;
+    position: absolute;
+    top: 25px;
+    right: 25px;
+    display: none;
+}
+.s-links {
+    width: 22px;
+}
+body > ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 13px;
+    position:fixed;
+    top: 130px;
+    right: 30px;
+}
 
-a {
-  color: #00B7FF;
+main {
+    padding: 30px;
+    width: var(--ch);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 50vh;
+    background-color: var(--white);
+    padding-block-start: 6rem;
+}
+main h2 {
+    font-style:italic;
+    font-size: 2rem;
+    font-family: Playfair;
+    color: rgb(65, 65, 65);
+}
+/* mission */
+.mission {
+    /* background-color: rgb(60, 135, 68); */
+    /* color: white; */
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: var(--ch);
+}
+.story {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;  
+    width: var(--ch);
+}
+/* join */
+.join{
+    /* width: var(--ch); */
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+.join p {
+    font-size: 0.8rem;
+}
+.join h3 {
+    font-weight: 800;
+    font-size: 2rem;
+}
+footer input {
+    font-family: var(--poppins), sans-serif;
+    padding: 0.8rem;
+}
+footer button {
+    padding: .94rem 1.3rem;
+    font-family: var(--poppins);
+    background-color: var(--green);
+    color: white;
+    border-radius: 0.3rem;
+    border: 0;
+    font-weight: 600;
 }
