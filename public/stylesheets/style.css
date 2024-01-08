@@ -62,7 +62,7 @@ body > ul {
 
 main {
     padding: 30px;
-    width: var(--ch);
+    max-width: var(--ch);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -84,14 +84,14 @@ main h2 {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: var(--ch);
+    max-width: var(--ch);
 }
 .story {
     padding: 1.5rem;
     display: flex;
     flex-direction: column;
     align-items: center;  
-    width: var(--ch);
+    max-width: var(--ch);
 }
 /* join */
 .join{
