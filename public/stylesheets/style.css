@@ -1,5 +1,5 @@
 :root {
-    --white: rgb(255, 255, 255);
+    --white: aliceblue;
     --green: rgba(79, 150, 79, 0.998);
     --poppins: Poppins;
     --ch:115ch;
@@ -9,6 +9,7 @@ body {
     padding: 0;
     margin: 0;
     font-family: Poppins, sans-serif;
+    background-color: var(--white);
 }
 .logo {
     max-width: 65px;
@@ -46,6 +47,7 @@ header a {
     top: 25px;
     right: 25px;
     display: none;
+    z-index: 20;
 }
 .s-links {
     width: 22px;
@@ -58,6 +60,7 @@ body > ul {
     position:fixed;
     top: 130px;
     right: 30px;
+    background-color: transparent;
 }
 
 main {
@@ -94,6 +97,7 @@ main ol {
 .mission {
     /* background-color: rgb(60, 135, 68); */
     /* color: white; */
+    background-color: var(--white);
     padding: 1rem;
     display: flex;
     flex-direction: column;
@@ -106,6 +110,7 @@ main ol {
     flex-direction: column;
     align-items: center;  
     max-width: var(--ch);
+    background-color: var(--white);
 }
 /* join */
 .join{
@@ -122,6 +127,9 @@ main ol {
 .join h3 {
     font-weight: 800;
     font-size: 2rem;
+}
+footer {
+    background-color: var(--white);
 }
 footer input {
     font-family: var(--poppins), sans-serif;
@@ -141,4 +149,67 @@ footer button {
     display: flex;
     gap: 10px;
     flex-wrap: wrap;
+}
+.menu-list {
+    margin: 4rem 0;
+    position: fixed;
+    right: 1px;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    /* align-items: center; */
+
+    padding-top: 2rem;
+    background-color: aliceblue;
+    height: 100vh;
+    display: none;
+}
+.menu-list .nav-ul {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+.menu-list .links {
+    display: flex;
+    gap: 10px;
+    list-style: none;
+}
+.menu-list a {
+    color: black;
+    text-decoration: none;
+    font-size: 1.5rem;
+}
+
+
+@media (max-width: 850px) {
+    body > ul, .nav-ul, .add {
+        display: none;
+    }  
+    .menu {
+        display: block;
+        /* z-index: 1000; */
+    }
+    .dis {
+        display: block !important;
+    }
+    .s-links{
+        width: 35px;
+    }
+    .nav-ul{
+        padding-left: 0;
+    }
+    body > ul {
+        gap: 3rem;
+    }
+}
+@media (max-width: 550px) {
+    .menu-list {
+        width: 100vw !important;
+        align-items: center;
+        justify-content: center;
+        padding-left: 2rem;
+        font: 1rem;
+    }
+    
 }
