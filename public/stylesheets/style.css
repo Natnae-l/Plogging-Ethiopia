@@ -136,3 +136,9 @@ footer button {
     border: 0;
     font-weight: 600;
 }
+.join form {
+    padding: 0 1rem;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
