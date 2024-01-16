@@ -1,29 +1,51 @@
-var createError = require('http-errors');
-var express = require('express');
-var path = require('path');
-var cookieParser = require('cookie-parser');
-var logger = require('morgan');
-
-require('dotenv').config()
+const createError = require('http-errors');
+const express = require('express');
+const path = require('path');
+const cookieParser = require('cookie-parser');
+const logger = require('morgan');
+const flash = require('connect-flash')
+const connectDB = require('./config/db')
+const session = require('express-session')
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 
 var app = express();
-app.listen(process.env.PORT, () => console.log(`app listening on port: ${process.env.PORT}`))
+//dotenv
+require('dotenv').config()
+
+//connect DB
+connectDB()
+ .then(() => app.listen(process.env.PORT, () => console.log(`app listening on port: ${process.env.PORT}`)))
+ .catch(err => next(err))
+//start server
+
+
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
+
+app.use(session({
+  secret: 'secret',
+  resave: true,
+  saveUninitialized: true
+}))
 
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(flash())
+
+app.use((req, res, next) => {
+  res.locals.user = req.flash('user') || '';
+  next()
+})
 
 app.use('/', indexRouter);
-app.use('/users', usersRouter);
+app.use('/', usersRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

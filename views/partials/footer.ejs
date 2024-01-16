@@ -1,16 +1,24 @@
 <footer id="join">
     <section class="join">
         <h3>SUBSCRIBE</h3>
-        <p>Sign up with your email address to receive news and updates.</p>
-        <form action="">
+        <%if (locals.user != ''){%>
+            <p><%= locals.user%></p>
+            <%}%>
+        <p style="padding-inline: 10px; margin: 10px auto;">Sign up with your email address to receive news and updates.</p>
+        <form action="/signup" method="post">
             <input type="text" name="firstName" id="" placeholder="First Name" required>
             <input type="text" name="lastName" id="" placeholder="Last Name" required>
-            <input type="email" name="email" id="" placeholder="Email" required>
+            <input  name="email" type="email" id="" placeholder="Email" required>
+            <input type="tel" name="phone" id="" placeholder="Phone number" required>
             <button type="submit">Join</button>
         </form>
-        <p>Plogging is an initiative of Clean Trails, Inc. a 501(c)3 non-profit. Plogging© Clean Trails© 2023 All rights reserved <br> <span>Website Design by Ben Taylor</span></p>
+        <p style="padding-inline: 10px; margin: 10px auto;">Thank you for your interest in Plogging-Ethiopia! Together, let's make Ethiopia cleaner and healthier.</p>
     </section>
     <section style="padding: 1rem; box-sizing: border-box; color: white; font-size: 0.85rem; background-color: black; height: 120px; display: flex; justify-content: center; align-items: center;">
-        <p>Thank you for your interest in Plogging-Ethiopia! Together, let's make Ethiopia cleaner and healthier.</p>
+        <p style="color: rgb(191, 190, 190);">@copyright 2024 by Plogging Ethiopia | Developed by <a href="https://www.kasmasolution.com" style="color: rgb(167, 168, 169);"> Kasma Solution</a></p>
     </section>
 </footer>
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
