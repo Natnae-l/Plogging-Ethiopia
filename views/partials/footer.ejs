@@ -1,9 +1,6 @@
 <footer id="join">
     <section class="join">
-        <h3>SUBSCRIBE</h3>
-        <%if (locals.user != ''){%>
-            <p><%= locals.user%></p>
-            <%}%>
+        <h3>JOIN US</h3>
         <p style="padding-inline: 10px; margin: 10px auto;">Sign up with your email address to receive news and updates.</p>
         <form action="/signup" method="post">
             <input type="text" name="firstName" id="" placeholder="First Name" required>

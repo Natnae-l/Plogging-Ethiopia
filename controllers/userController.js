@@ -12,13 +12,15 @@ addUser = async (req, res, next) => {
         lastName: req.body.lastName,
         email: req.body.email,
         phone: req.body.phone
-      })
-      await newUser.save()
-      console.log('new user saved')
+      }) 
+      let userExist = await User.findOne({email: newUser.email})
+      if (!userExist){
+        await newUser.save()
 
-      req.flash('user') = 'You have joined Plogging Ethiopia'
-    
-      return res.redirect('/')
+        res.render('message', {user: {msg:'You have joined Plogging Ethiopia!'}})
+        return;
+      }
+      res.render('message', {user: {msg:"You're already a family!"}})
   }
 
   res.send({ errors: result.array() });

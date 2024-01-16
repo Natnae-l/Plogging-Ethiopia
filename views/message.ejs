@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('./partials/head') %>
+<body>
+    <%- include('./partials/nav')%>
+    <%if (locals.user != ''){%> 
+        <h1 style="font-family: Poppins,sans-serif; padding-top: 5rem; text-align: center;">Congratulations!</h1>
+        <h3 style="font-family: Poppins,sans-serif; text-align: center;"><%= user.msg%></h3>
+        <%}%>  
+   <%- include('./partials/s-links')%>
+    
+   <%- include('./partials/footer')%>
+</body>
+</html>
