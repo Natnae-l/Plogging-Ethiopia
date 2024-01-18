@@ -4,8 +4,8 @@ const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const flash = require('connect-flash')
-const connectDB = require('./config/db')
 const session = require('express-session')
+const mongoose = require('mongoose')
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
@@ -15,9 +15,9 @@ var app = express();
 require('dotenv').config()
 
 //connect DB
-connectDB()
+mongoose.connect(process.env.mongoDB)
  .then(() => app.listen(process.env.PORT, () => console.log(`app listening on port: ${process.env.PORT}`)))
- .catch(err => next(err))
+ .catch(err => console.log(err))
 //start server
 
 
